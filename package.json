@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/ab1228/Travelio/issues"
   },
-  "homepage": "https://github.com/ab1228/Travelio#readme"
+  "homepage": "https://github.com/ab1228/Travelio#readme",
+  "dependencies": {
+    "express-handlebars": "^3.1.0",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3"
+  }
 }
