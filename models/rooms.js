@@ -1,22 +1,30 @@
 module.exports = function (sequelize, DataTypes) {
     var Rooms = sequelize.define("Rooms", {
-        title: {
+        checkInPlace: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        body: {
+        checkIn: {
             type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        category: {
+        checkOut: {
             type: DataTypes.STRING,
-            defaultValue: "Personal"
+            validate: {
+                len: [1]
+            }
+        },
+        beds: {
+            type: DataTypes.STRING
+        },
+        roomStatus: {
+            type: DataTypes.STRING
         }
     });
     return Rooms;
