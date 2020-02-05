@@ -15,7 +15,9 @@ app.set('view engine', 'handlebars');
 
 require('./routes/html-routes')(app);
 
-
-app.listen(PORT, function () {
-    console.log('App now listening at localhost: ' + PORT);
-});
+var db = require("./models");
+db.sequelize.sync().then(function () {
+    app.listen(PORT, function () {
+        console.log('server started at http://localhost:' + PORT);
+    });
+}); 
