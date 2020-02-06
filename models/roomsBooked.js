@@ -36,7 +36,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     bookedRooms.associate = function (models) {
-        bookedRooms.belongsTo(models.Rooms, {
+        bookedRooms.belongsTo(models.Hotels, {
             foreignKey: {
                 allowNull: false
             }

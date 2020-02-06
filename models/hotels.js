@@ -1,11 +1,15 @@
 module.exports = function (sequelize, DataTypes) {
-    var Rooms = sequelize.define("Rooms", {
-        checkInPlace: {
+    var Hotels = sequelize.define("Hotels", {
+        Hotel: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
+        },
+        location: {
+            type: DataTypes.STRING
+
         },
         checkIn: {
             type: DataTypes.TEXT,
@@ -27,6 +31,6 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING
         }
     });
-    return Rooms;
+    return Hotels;
 };
 
