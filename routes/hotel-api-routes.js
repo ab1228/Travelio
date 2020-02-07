@@ -1,26 +1,6 @@
+const express = require('express');
 var db = require("../models");
 
-module.exports = function (app) {
-    app.get("/api/hotels", function (req, res) {
-        // Here we add an "include" property to our options in our findAll query
-        // We set the value to an array of the models we want to include in a left outer join
-        // In this case, just db.Post
-        db.Hotel.findAll({
-
-        }).then(function (dbHotel) {
-            res.json(dbHotel);
-        });
-    });
-
-
-
-
-
-
-
-};
-
-var path = require("path");
 
 
 module.exports = function (app) {
@@ -28,10 +8,34 @@ module.exports = function (app) {
         res.render('index');
     });
 
-    app.get('/all-rooms', function (req, res) {
-        res.render('allrooms');
-    })
+
+    app.get("/allrooms", function (req, res) {
+        db.Hotel.findAll()
+            .then(function (hotels, cb) {
+                console.log(hotels);
+                res.render("allrooms", { hotels }, {
+                    allowProtoMethodsByDefault: true,
+                    allowProtoPropertiesByDefault: true
+                });
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+
+    });
+    //     var hbsObject = {
+    //         cats: data
+    //     };
+    //     console.log(hbsObject);
+    //     res.render("index", hbsObject);
+    // });
+    // });
+
+
+
 
 
 
 };
+

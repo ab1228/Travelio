@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var bookedRooms = sequelize.define("bookedRooms", {
+    var bookedRoom = sequelize.define("bookedRoom", {
         firstName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         dateOfBirth: {
-            type: DataTypes.STRING,
+            type: DataTypes.DATE,
 
         },
         email: {
@@ -35,12 +35,12 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    bookedRooms.associate = function (models) {
-        bookedRooms.belongsTo(models.Hotels, {
+    bookedRoom.associate = function (models) {
+        bookedRoom.belongsTo(models.Hotel, {
             foreignKey: {
                 allowNull: false
             }
         });
     };
-    return bookedRooms;
+    return bookedRoom;
 };

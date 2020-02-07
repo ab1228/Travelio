@@ -13,7 +13,8 @@ app.use(express.json());
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-require('./routes/html-routes')(app);
+
+require("./routes/hotel-api-routes.js")(app);
 
 var db = require("./models");
 db.sequelize.sync().then(function () {
