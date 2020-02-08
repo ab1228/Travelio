@@ -1,22 +1,26 @@
-<div class="container">
+<div class="container" id="hotels">
+
+    <h1>All Hotels</h1>
+
+
+    {{#each hotels}}
     <section class="rooms">
-        <h1>All Hotels</h1>
+        <h3>{{hotelName}}</h3>
+        <ul>
+            <li>Location: {{location}}</li>
+            <li>Check-in: {{checkIn}}</li>
+            <li>Check-out: {{checkOut}}</li>
+            <li>{{personsPerRoom}}</li>
+            <li>Room status: {{roomStatus}}</li>
 
-        {{#each hotels}}
-
-        <h1>{{hotelName}}</h1>
-
-        <h2>{{location}}</h2>
-        <h2>{{checkIn}}</h2>
-        <h2>{{checkOut}}</h2>
-        <h2>{{personsPerRoom}}</h2>
-        <h2>{{roomStatus}}</h2>
-
-
-
-        {{else}}
-        <p>No Hotels Available</p>
-        {{/each}}
+        </ul>
 
     </section>
+
+
+    {{else}}
+    <p>No Hotels Available</p>
+    {{/each}}
+
+
 </div>

@@ -11,12 +11,9 @@ module.exports = function (app) {
 
     app.get("/allrooms", function (req, res) {
         db.Hotel.findAll()
-            .then(function (hotels, cb) {
+            .then(function (hotels) {
                 console.log(hotels);
-                res.render("allrooms", { hotels }, {
-                    allowProtoMethodsByDefault: true,
-                    allowProtoPropertiesByDefault: true
-                });
+                res.render("allrooms", { hotels });
 
             })
             .catch(function (err) {
