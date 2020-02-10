@@ -32,6 +32,9 @@ module.exports = function (sequelize, DataTypes) {
         },
         personsPerRoom: {
             type: DataTypes.STRING
+        },
+        roomPrice: {
+            type: DataTypes.INTEGER
         }
     });
     return Hotel;

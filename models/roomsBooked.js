@@ -1,5 +1,9 @@
 module.exports = function (sequelize, DataTypes) {
     var bookedRoom = sequelize.define("bookedRoom", {
+        refNumber: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         firstName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -37,9 +41,9 @@ module.exports = function (sequelize, DataTypes) {
 
     bookedRoom.associate = function (models) {
         bookedRoom.belongsTo(models.Hotel, {
-            foreignKey: {
-                allowNull: false
-            }
+            foreignKey: 'refNumber'
+
+
         });
     };
     return bookedRoom;
