@@ -21,13 +21,9 @@ module.exports = function (app) {
             })
 
     });
-    //     var hbsObject = {
-    //         cats: data
-    //     };
-    //     console.log(hbsObject);
-    //     res.render("index", hbsObject);
-    // });
-    // });
+    app.get("/sale", function (req, res) {
+        res.render("buy");
+    });
 
 
 
