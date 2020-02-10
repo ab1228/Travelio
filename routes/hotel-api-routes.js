@@ -25,6 +25,14 @@ module.exports = function (app) {
         res.render("buy");
     });
 
+    app.get("/search/flights/id:", function (req, res) {
+        db.Hotel.findAll({
+            where: {
+
+            }
+        })
+    })
+
 
 
 
