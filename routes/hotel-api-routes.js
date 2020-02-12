@@ -25,12 +25,23 @@ module.exports = function (app) {
         res.render("buy");
     });
 
-    app.get("/search/flights/id:", function (req, res) {
+    app.get("/search/:location/:checkIn/:checkOut", function (req, res) {
         db.Hotel.findAll({
             where: {
+                location: req.params.location,
+                checkIn: req.params.checkIn,
+                checkOut: req.params.checkOut
+
 
             }
+        }).then(function (hotels) {
+            console.log(hotels);
+            res.render("allrooms", { hotels });
+
         })
+            .catch(function (err) {
+                console.log(err);
+            })
     })
 
 
