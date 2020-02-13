@@ -21,8 +21,10 @@ $(function () {
             newSearch.checkIn +
             '/' +
             newSearch.checkOut;
+
         window.location.href = URL;
     });
 
 
 });
+

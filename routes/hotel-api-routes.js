@@ -32,7 +32,7 @@ module.exports = function (app) {
         var hotel_location = req.params.location
         var check_in = req.params.checkIn;
         var check_out = req.params.checkOut;
-        console.log(req.params)
+        console.log(hotel_location);
         db.Hotel.findAll({
             where: {
                 location: hotel_location,
