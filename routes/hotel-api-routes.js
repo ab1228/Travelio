@@ -1,5 +1,7 @@
 const express = require('express');
 var db = require("../models");
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 
 
@@ -25,12 +27,17 @@ module.exports = function (app) {
         res.render("buy");
     });
 
+    ///take in params from search then render results and hbs
     app.get("/search/:location/:checkIn/:checkOut", function (req, res) {
+        var hotel_location = req.params.location
+        var check_in = req.params.checkIn;
+        var check_out = req.params.checkOut;
+        console.log(req.params)
         db.Hotel.findAll({
             where: {
-                location: req.params.location,
-                checkIn: req.params.checkIn,
-                checkOut: req.params.checkOut
+                location: hotel_location,
+                checkIn: check_in,
+                checkOut: check_out
 
 
             }
