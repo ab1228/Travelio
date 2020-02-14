@@ -3,6 +3,8 @@ module.exports = function (sequelize, DataTypes) {
         refNumber: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
         },
         firstName: {
             type: DataTypes.STRING,
