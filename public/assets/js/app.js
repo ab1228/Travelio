@@ -25,6 +25,14 @@ $(function () {
         window.location.href = URL;
     });
 
+    $(function () {
+        $().on('submit', function () {
+            var bookedRoom = {
+
+            }
+        })
+    })
+
 
 });
 
