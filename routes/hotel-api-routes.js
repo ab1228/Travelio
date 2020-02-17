@@ -29,7 +29,7 @@ module.exports = function (app) {
 
     ///take in params from search then render results and hbs
     app.get("/search/:location/:checkIn/:checkOut", function (req, res) {
-        var hotel_location = req.params.location
+        var hotel_location = req.params.location;
         var check_in = req.params.checkIn;
         var check_out = req.params.checkOut;
         console.log(hotel_location);
@@ -51,7 +51,14 @@ module.exports = function (app) {
             })
     });
 
-    // app.post()
+    app.post('/purchase/:firstName/:lastName/:dateOfBirth/:phoneNumber/:email:', function (req, res) {
+        var firstName = req.params.firstName;
+        var lastName = req.params.LastName;
+        var dateOfBirth = req.params.dateOfBirth;
+        var phoneNumber = req.params.phoneNumber;
+        var email = req.params.email;
+
+    })
 
 
 

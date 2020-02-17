@@ -26,16 +26,17 @@ $(function () {
     });
 
     $(function () {
-        $().on('submit', function () {
+        $('#book_room').on('submit', function () {
             var bookedRoom = {
                 firstName: $('#firstName').val().trim(),
                 lastName: $('#lastName').val().trim(),
-                // dateOfBirth: $().val().trim(),
+                dateOfBirth: $('date_of_birth').val().trim(),
                 phoneNumber: $('#tel-input').val().trim(),
                 email: $('#email').val().trim()
 
 
             }
+            console.log(bookedRoom);
         })
     })
 
