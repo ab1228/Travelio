@@ -57,6 +57,18 @@ module.exports = function (app) {
         var dateOfBirth = req.params.dateOfBirth;
         var phoneNumber = req.params.phoneNumber;
         var email = req.params.email;
+        db.bookedRoom.create({
+            firstName = firstName,
+            lastName = lastName,
+            dateOfBirth = dateOfBirth,
+            phoneNumber = phoneNumber,
+            email = email
+
+        }).then(function (bookedRoom) {
+            console.lop(bookedRoom);
+        }).catch(function (err) {
+            console.log(err);
+        })
 
     })
 
