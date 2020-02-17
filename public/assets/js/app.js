@@ -28,6 +28,7 @@ $(function () {
     $(function () {
         $().on('submit', function () {
             var bookedRoom = {
+                firstName: $('#firstName').val().trim(),
 
             }
         })
