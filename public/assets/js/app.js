@@ -29,6 +29,11 @@ $(function () {
         $().on('submit', function () {
             var bookedRoom = {
                 firstName: $('#firstName').val().trim(),
+                lastName: $('#lastName').val().trim(),
+                // dateOfBirth: $().val().trim(),
+                phoneNumber: $('#tel-input').val().trim(),
+                email: $('#email').val().trim()
+
 
             }
         })
