@@ -35,9 +35,10 @@ $(function () {
                 email: $('#email').val().trim()
 
 
-            }
+            };
             console.log(bookedRoom);
-        })
+        });
+        var URL = '/'
     })
 
 

@@ -58,11 +58,11 @@ module.exports = function (app) {
         var phoneNumber = req.params.phoneNumber;
         var email = req.params.email;
         db.bookedRoom.create({
-            firstName = firstName,
-            lastName = lastName,
-            dateOfBirth = dateOfBirth,
-            phoneNumber = phoneNumber,
-            email = email
+            firstName: firstName,
+            lastName: lastName,
+            dateOfBirth: dateOfBirth,
+            phoneNumber: phoneNumber,
+            email: email
 
         }).then(function (bookedRoom) {
             console.lop(bookedRoom);
