@@ -33,7 +33,7 @@
                         <div class="col-md-6 mb-3">
                             <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
 
-                            <input class="form-control" type="tel" value="1-(555)-555-5555" id="tel-input">
+                            <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="tel-input">
                             <div class="invalid-feedback">
                                 Please enter a valid phone number.
                             </div>
@@ -58,7 +58,7 @@
                             </div>
                         </div>
 
-
+                        <input type="hidden" id="ref_Number" value="{{refNumber}}">
 
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
 
@@ -85,28 +85,27 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 
-    <script>
-            // Example starter JavaScript for disabling form submissions if there are invalid fields
-            (function () {
-                'use strict';
+    {{!-- <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
 
-                window.addEventListener('load', function () {
-                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                    var forms = document.getElementsByClassName('needs-validation');
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
 
-                    // Loop over them and prevent submission
-                    var validation = Array.prototype.filter.call(forms, function (form) {
-                        form.addEventListener('submit', function (event) {
-                            if (form.checkValidity() === false) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                            }
-                            form.classList.add('was-validated');
-                        }, false);
-                    });
-                }, false);
-            })();
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
     </script>
-</div>
+</div> --}}

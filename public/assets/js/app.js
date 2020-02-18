@@ -25,21 +25,36 @@ $(function () {
         window.location.href = URL;
     });
 
-    $(function () {
-        $('#book_room').on('submit', function () {
-            var bookedRoom = {
-                firstName: $('#firstName').val().trim(),
-                lastName: $('#lastName').val().trim(),
-                dateOfBirth: $('date_of_birth').val().trim(),
-                phoneNumber: $('#tel-input').val().trim(),
-                email: $('#email').val().trim()
+
+    $('#book_room').on('submit', function () {
+        event.preventDefault();
+
+        var newbookedRoom = {
+            refNumber: $("ref_Number").val(),
+            firstName: $('#firstName').val().trim(),
+            lastName: $('#lastName').val().trim(),
+            dateOfBirth: $('#date_of_birth').val().trim(),
+            phoneNumber: $('#tel-input').val().trim(),
+            email: $('#email').val().trim()
 
 
-            };
-            console.log(bookedRoom);
-        });
-        var URL = '/'
-    })
+        };
+        console.log(newbookedRoom);
+
+
+        // $.ajax('/api/bookedRoom', {
+        //     type: "POST",
+        //     data: newbookedRoom
+        // }).then(
+        //     function () {
+        //         console.log("created new booked room");
+        //         // Reload the page to get the updated list
+        //         location.reload();
+        //     }
+        // );
+    });
+
+
 
 
 });

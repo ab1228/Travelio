@@ -51,21 +51,23 @@ module.exports = function (app) {
             })
     });
 
-    app.post('/purchase/:firstName/:lastName/:dateOfBirth/:phoneNumber/:email:', function (req, res) {
-        var firstName = req.params.firstName;
-        var lastName = req.params.LastName;
-        var dateOfBirth = req.params.dateOfBirth;
-        var phoneNumber = req.params.phoneNumber;
-        var email = req.params.email;
+    app.post('/api/bookedRoom', function (req, res) {
+        var ref_Number = req.body.refNumber;
+        var first_Name = req.body.firstName;
+        var last_Name = req.body.LastName;
+        var dateOf_Birth = req.body.dateOfBirth;
+        var phone_Number = req.body.phoneNumber;
+        var user_email = req.body.email;
         db.bookedRoom.create({
-            firstName: firstName,
-            lastName: lastName,
-            dateOfBirth: dateOfBirth,
-            phoneNumber: phoneNumber,
-            email: email
+            refNumber: ref_Number,
+            firstName: first_Name,
+            lastName: last_Name,
+            dateOfBirth: dateOf_Birth,
+            phoneNumber: phone_Number,
+            email: user_email
 
         }).then(function (bookedRoom) {
-            console.lop(bookedRoom);
+            console.log(bookedRoom);
         }).catch(function (err) {
             console.log(err);
         })
