@@ -52,27 +52,15 @@ module.exports = function (app) {
     });
 
     app.post('/api/bookedRoom', function (req, res) {
-        var ref_Number = req.body.refNumber;
-        var first_Name = req.body.firstName;
-        var last_Name = req.body.LastName;
-        var dateOf_Birth = req.body.dateOfBirth;
-        var phone_Number = req.body.phoneNumber;
-        var user_email = req.body.email;
-        db.bookedRoom.create({
-            refNumber: ref_Number,
-            firstName: first_Name,
-            lastName: last_Name,
-            dateOfBirth: dateOf_Birth,
-            phoneNumber: phone_Number,
-            email: user_email
-
-        }).then(function (bookedRoom) {
-            console.log(bookedRoom);
+        db.bookedRoom.create(req.body).then(function (bookedRoom) {
+            res.json(bookedRoom);;
         }).catch(function (err) {
             console.log(err);
         })
 
     })
+
+
 
 
 

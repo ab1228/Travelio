@@ -1,5 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
     var Hotel = sequelize.define("Hotel", {
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
+        },
         hotelName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -37,6 +42,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER
         }
     });
+    Hotel.associate = function (models) {
+        Hotel.hasMany(models.bookedRoom);
+    };
     return Hotel;
 };
 

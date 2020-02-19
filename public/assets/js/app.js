@@ -42,16 +42,17 @@ $(function () {
         console.log(newbookedRoom);
 
 
-        // $.ajax('/api/bookedRoom', {
-        //     type: "POST",
-        //     data: newbookedRoom
-        // }).then(
-        //     function () {
-        //         console.log("created new booked room");
-        //         // Reload the page to get the updated list
-        //         location.reload();
-        //     }
-        // );
+        $.ajax('/api/bookedRoom', {
+            type: "POST",
+            data: newbookedRoom
+        }).then(
+            function () {
+                console.log("created new booked room");
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+
     });
 
 
