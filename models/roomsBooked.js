@@ -2,6 +2,10 @@ module.exports = function (sequelize, DataTypes) {
     var bookedRoom = sequelize.define("bookedRoom", {
         refNumber: {
             type: DataTypes.INTEGER,
+            references: {
+                model: 'Hotels',
+                key: 'id'
+            },
             autoIncrement: true,
             primaryKey: true,
             allowNull: false
@@ -47,8 +51,13 @@ module.exports = function (sequelize, DataTypes) {
         // }
     });
 
-    bookedRoom.associate = function (models) {
-        bookedRoom.belongsTo(models.Hotel);
-    };
+    // bookedRoom.associate = function (models) {
+    //     bookedRoom.belongsTo(models.Hotel, {
+    //         references: {
+    //             model: 'Hotel',
+    //             key: 'refNumber'
+    //         }
+    //     });
+    // };
     return bookedRoom;
 };

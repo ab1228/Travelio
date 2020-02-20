@@ -35,7 +35,8 @@ $(function () {
             lastName: $('#lastName').val().trim(),
             dateOfBirth: $('#date_of_birth').val().trim(),
             phoneNumber: $('#tel-input').val().trim(),
-            email: $('#email').val().trim()
+            email: $('#email').val().trim(),
+            hotelID: $("#hotelID").val()
 
 
         };

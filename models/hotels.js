@@ -42,9 +42,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER
         }
     });
-    Hotel.associate = function (models) {
-        Hotel.hasMany(models.bookedRoom);
-    };
+    // Hotel.associate = function (models) {
+    //     Hotel.hasMany(models.bookedRoom);
+    // };
     return Hotel;
 };
 
