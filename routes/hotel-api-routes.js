@@ -9,24 +9,6 @@ module.exports = function (app) {
     app.get('/', function (req, res) {
         res.render('index');
     });
-
-
-    app.get("/allrooms", function (req, res) {
-        db.Hotel.findAll()
-            .then(function (hotels) {
-                console.log(hotels);
-                res.render("allrooms", { hotels });
-
-            })
-            .catch(function (err) {
-                console.log(err);
-            })
-
-    });
-    app.get("/sale", function (req, res) {
-        res.render("buy");
-    });
-
     ///take in params from search then render results and hbs
     app.get("/search/:location/:checkIn/:checkOut", function (req, res) {
         var hotel_location = req.params.location;
@@ -51,9 +33,32 @@ module.exports = function (app) {
             })
     });
 
+    /// SHOWS ALL HOTELS
+    app.get("/allrooms", function (req, res) {
+        db.Hotel.findAll()
+            .then(function (hotels) {
+                console.log(hotels);
+                res.render("allrooms", { hotels });
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+
+    });
+    /// RENDER BUY.HBS
+    app.get("/sale", function (req, res) {
+        res.render("buy");
+    });
+
+
+
+    /// CREATES BOOKINGS
     app.post('/api/bookedRoom', function (req, res) {
         db.bookedRoom.create(req.body).then(function (bookedRoom) {
-            res.json(bookedRoom);;
+            res.json(bookedRoom).then(function () {
+                res.render('roombooked')
+            })
         }).catch(function (err) {
             console.log(err);
         })
