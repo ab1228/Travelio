@@ -46,6 +46,10 @@ module.exports = function (app) {
             })
 
     });
+
+    app.get("/myHotel", function (req, res) {
+        res.render('myhotel')
+    });
     /// RENDER BUY.HBS
     app.get("/sale", function (req, res) {
         res.render("buy");
@@ -64,6 +68,7 @@ module.exports = function (app) {
         })
 
     })
+
 
 
 
