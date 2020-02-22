@@ -57,7 +57,27 @@ $(function () {
             // Make sure to preventDefault on a submit event.
             event.preventDefault();
 
+            var myHotel = {
+                firstName: $('#firstName')
+                    .val()
+                    .trim(),
+                lastName: $('#lastName')
+                    .val()
+                    .trim(),
+                email: $('#email')
+                    .val()
+                    .trim(),
+                // dateOfbirth: $()
+            };
 
+            var URL =
+                '/reservation/email/' +
+                myHotel.email +
+                '/firstName/' +
+                myHotel.firstName +
+                '/lastName/' +
+                myHotel.lastName;
+            window.location.href = URL;
         });
 
     });
