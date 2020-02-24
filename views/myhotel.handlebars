@@ -3,11 +3,11 @@
     <div class="container">
         <div class="py-5 text-center">
 
-            <h2>My Hotel</h2>
+            <h2>Checkout form</h2>
 
         </div>
 
-        <div class="row" id="book_room">
+        <div class="row" id="my_Hotel">
 
             <div class="col-md-12  justify-content-center">
 
@@ -15,14 +15,14 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="firstName">First name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="firstName2" placeholder="" value="" required="">
                             <div class="invalid-feedback">
                                 Valid first name is required.
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="lastName">Last name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="lastName2" placeholder="" value="" required="">
                             <div class="invalid-feedback">
                                 Valid last name is required.
                             </div>
@@ -33,7 +33,7 @@
                         <div class="col-md-6 mb-3">
                             <label for="example-tel-input" class="col-2 col-form-label">Telephone</label>
 
-                            <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="tel-input">
+                            <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="tel-input2">
                             <div class="invalid-feedback">
                                 Please enter a valid phone number.
                             </div>
@@ -42,7 +42,7 @@
 
                         <div class="col-md-6 mb-3">
                             <label for="email">Email <span class="text-muted"></label>
-                            <input type="email" class="form-control" id="email" placeholder="abc123@hotmail.com">
+                            <input type="email" class="form-control" id="email2" placeholder="abc123@hotmail.com">
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
@@ -52,21 +52,13 @@
                         <div class="col-md-6 mb-3">
                             <label for="example-tel-input" class="col-2 col-form-label">Date of Birth</label>
 
-                            <input class="form-control" type="date" id="date_of_birth">
+                            <input class="form-control" type="date" id="date_of_birth2">
                             <div class="invalid-feedback">
                                 Please enter a valid phone number.
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="example-tel-input" class="col-2 col-form-label">Date of Birth</label>
 
-                            <input class="form-control" type="text-muted" id="ref-number">
-                            <div class="invalid-feedback">
-                                Please enter a valid reference number.
-                            </div>
-                        </div>
-
-
+                        {{!-- <input type="hidden" id="hotelID" value="{{hotelId}}"> --}}
 
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
 
@@ -76,3 +68,13 @@
                 </form>
             </div>
         </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">© 2017-2018 Company Name</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+        </footer>
+    </div>

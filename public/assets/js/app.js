@@ -53,34 +53,43 @@ $(function () {
                 // location.reload();
             }
         );
-        $('.myHotel').on('submit', function (event) {
-            // Make sure to preventDefault on a submit event.
-            event.preventDefault();
-
-            var myHotel = {
-                firstName: $('#firstName')
-                    .val()
-                    .trim(),
-                lastName: $('#lastName')
-                    .val()
-                    .trim(),
-                email: $('#email')
-                    .val()
-                    .trim(),
-                // dateOfbirth: $()
-            };
-
-            var URL =
-                '/reservation/email/' +
-                myHotel.email +
-                '/firstName/' +
-                myHotel.firstName +
-                '/lastName/' +
-                myHotel.lastName;
-            window.location.href = URL;
-        });
-
     });
+    $('#my_Hotel').on('submit', function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        var myHotel = {
+            firstName: $('#firstName2')
+                .val()
+                .trim(),
+            lastName: $('#lastName2')
+                .val()
+                .trim(),
+            email: $('#email2')
+                .val()
+                .trim(),
+            dateOfbirth: $('#date_of_birth2')
+                .val()
+                .trim(),
+            phoneNumber: $('#tel-input2')
+                .val()
+                .trim()
+
+        };
+        console.log(myHotel);
+
+        // var URL =
+        //     '/bookedRoom/email/' +
+        //     myHotel.email +
+        //     '/firstName/' +
+        //     myHotel.firstName +
+        //     '/lastName/' +
+        //     myHotel.lastName + '/dateofbirth/' + myHotel.dateOfbirth + '/phoneNumber/' + myHotel.phoneNumber;
+        // window.location.href = URL;
+        // console.log(URL);
+    });
+
+
 
 
 

@@ -69,6 +69,30 @@ module.exports = function (app) {
 
     })
 
+    ///TO GET BOOKINGS
+    app.get("/search/:location/:checkIn/:checkOut", function (req, res) {
+        var hotel_location = req.params.location;
+        var check_in = req.params.checkIn;
+        var check_out = req.params.checkOut;
+        console.log(hotel_location);
+        db.Hotel.findAll({
+            where: {
+                location: hotel_location,
+                checkIn: check_in,
+                checkOut: check_out
+
+
+            }
+        }).then(function (hotels) {
+            console.log(hotels);
+            res.render("allrooms", { hotels });
+
+        })
+            .catch(function (err) {
+                console.log(err);
+            })
+    });
+
 
 
 
