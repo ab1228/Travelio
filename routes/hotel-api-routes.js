@@ -70,22 +70,27 @@ module.exports = function (app) {
     })
 
     ///TO GET BOOKINGS
-    app.get("/search/:location/:checkIn/:checkOut", function (req, res) {
-        var hotel_location = req.params.location;
-        var check_in = req.params.checkIn;
-        var check_out = req.params.checkOut;
-        console.log(hotel_location);
-        db.Hotel.findAll({
+    app.get("/bookedRoom/firstName/:firstName/lastName/:lastName/email/:email/dateOfbirth/:dateOfbirth/phoneNumber/:phoneNumber", function (req, res) {
+        var email = req.params.email;
+        var firstName = req.params.firstName;
+        var lastName = req.params.lastName;
+        var dateOfBirth = req.params.dateOfbirth;
+        var phoneNumber = req.params.phoneNumber;
+        console.log(req.params);
+        db.bookedRoom.findAll({
             where: {
-                location: hotel_location,
-                checkIn: check_in,
-                checkOut: check_out
+                firstName: firstName,
+                lastName: lastName,
+                dateOfBirth: dateOfBirth,
+                email: email,
+                phoneNumber: phoneNumber
+
 
 
             }
         }).then(function (hotels) {
             console.log(hotels);
-            res.render("allrooms", { hotels });
+            // res.render("allrooms", { hotels });
 
         })
             .catch(function (err) {
@@ -94,7 +99,17 @@ module.exports = function (app) {
     });
 
 
-
+    // db.users.findAll({
+    //     include: [
+    //         {
+    //             model: db.posts,
+    //             include: [
+    //                 {
+    //                     model: db.comments
+    //                 }
+    //             ]
+    //         }
+    //     ]
 
 
 

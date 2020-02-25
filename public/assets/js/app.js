@@ -78,15 +78,14 @@ $(function () {
         };
         console.log(myHotel);
 
-        // var URL =
-        //     '/bookedRoom/email/' +
-        //     myHotel.email +
-        //     '/firstName/' +
-        //     myHotel.firstName +
-        //     '/lastName/' +
-        //     myHotel.lastName + '/dateofbirth/' + myHotel.dateOfbirth + '/phoneNumber/' + myHotel.phoneNumber;
-        // window.location.href = URL;
-        // console.log(URL);
+        var URL =
+            '/bookedRoom/firstName/' +
+            myHotel.firstName +
+            '/lastName/' +
+            myHotel.lastName + '/email/' +
+            myHotel.email + '/dateOfbirth/' + myHotel.dateOfbirth + '/phoneNumber/' + myHotel.phoneNumber;
+        window.location.href = URL;
+        console.log(URL);
     });
 
 
