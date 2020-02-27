@@ -88,8 +88,8 @@ module.exports = function (app) {
 
 
             }
-        }).then(function (hotels) {
-            console.log(hotels);
+        }).then(function (rooms) {
+            console.log(rooms);
             // res.render("allrooms", { hotels });
 
         })
