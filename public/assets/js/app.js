@@ -85,7 +85,7 @@ $(function () {
             myHotel.lastName + '/email/' +
             myHotel.email + '/dateOfbirth/' + myHotel.dateOfbirth + '/phoneNumber/' + myHotel.phoneNumber;
         window.location.href = URL;
-        console.log(URL);
+
     });
 
 

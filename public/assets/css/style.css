@@ -44,3 +44,10 @@ body, h1 {
   margin: auto;
   overflow: hidden;
 }
+/*index page */
+ .search-wrap {
+  background: url('../images/193161.jpg') no-repeat center center fixed / cover;
+  height: 100vh;
+  width: 100%;
+ 
+}
