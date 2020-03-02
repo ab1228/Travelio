@@ -46,8 +46,8 @@ body, h1 {
 }
 /*index page */
  .search-wrap {
-  background: url('../images/193161.jpg') no-repeat center center fixed / cover;
-  height: 100vh;
+  background: url('../images/193161.jpg') no-repeat  ;
+  height: 70vh;
   width: 100%;
  
 }
