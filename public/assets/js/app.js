@@ -1,4 +1,6 @@
 $(function () {
+
+    ////SEARCH FOR HOTEL INDEX PAGE
     $('#search-form').on('submit', function () {
         event.preventDefault();
 
@@ -25,7 +27,7 @@ $(function () {
         window.location.href = URL;
     });
 
-
+    //// CREATE BOOKING FOR ROOM
     $('#book_room').on('submit', function () {
         event.preventDefault();
 
@@ -54,6 +56,8 @@ $(function () {
             }
         );
     });
+
+    //// GET ROUTE FOR HOTEL BOOKING
     $('#my_Hotel').on('submit', function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();

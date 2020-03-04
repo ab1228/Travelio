@@ -5,17 +5,17 @@
 
     {{#each rooms}}
     <section class="rooms">
-        <h3>{{refNumber}}</h3>
+        <h3>Hotel Reference Number: {{refNumber}}</h3>
         <ul>
             <li>First Name: {{firstName}}</li>
             <li>lastName: {{lastName}}</li>
             <li>Date of birth: {{dateOfBirth}}</li>
-            <li>Email{{email}}</li>
+            <li>Email: {{email}}</li>
 
 
         </ul>
 
-        <a href="/sale" class="btn btn-light" role="button">Buy</a>
+        <a type="submit" class="btn btn-warning" data-id="{{this.id}}" role="button">Cancel Booking</a>
 
 
     </section>

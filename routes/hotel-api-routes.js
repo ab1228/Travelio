@@ -91,7 +91,7 @@ module.exports = function (app) {
 
         }).then(function (rooms) {
             console.log(rooms);
-            res.render('roomBooked', { rooms });
+            res.render("roomBooked", { rooms });
 
         })
             .catch(function (err) {
@@ -110,7 +110,12 @@ module.exports = function (app) {
     //     .catch(console.error)
 
 
+    ///DELETE BOOKING
 
+    app.delete("/api/deleteBookings/:id", function (req, res) {
+        var hotelBooking = "id = " + req.params.id;
+
+    });
 
 
 
