@@ -64,9 +64,7 @@ module.exports = function (app) {
     /// CREATES BOOKINGS
     app.post('/api/bookedRoom', function (req, res) {
         db.bookedRoom.create(req.body).then(function (bookedRoom) {
-            res.json(bookedRoom).then(function () {
-                res.render('roombooked')
-            })
+            res.json(bookedRoom)
         }).catch(function (err) {
             console.log(err);
         })
@@ -74,30 +72,26 @@ module.exports = function (app) {
     })
 
     ///TO GET BOOKINGS
-    app.get("/bookedRoom/firstName/:firstName/lastName/:lastName/email/:email/dateOfbirth/:dateOfbirth/phoneNumber/:phoneNumber", function (req, res) {
+    app.get("/bookedRoom/firstName/:firstName/lastName/:lastName/email/:email/phoneNumber/:phoneNumber", function (req, res) {
 
-        var firstName = req.params.firstName;
-        var lastName = req.params.lastName;
-        var dateOfBirth = req.params.dateOfbirth;
-        var email = req.params.email;
-        var phoneNumber = req.params.phoneNumber;
-
+        var first_Name = req.params.firstName;
+        var last_Name = req.params.lastName;
+        // var date_Of_Birth = req.params.dateOfbirth;
+        var user_email = req.params.email;
+        var phone_Number = req.params.phoneNumber;
+        console.log(req.params);
         db.bookedRoom.findAll({
             where: {
-                firstName: firstName,
-                lastName: lastName,
-                dateOfBirth: dateOfBirth,
-                email: email,
-                phoneNumber: phoneNumber
-            },
-            include: [
-                {
-                    model: db.Hotels
-                }
-            ]
+                firstName: first_Name,
+                lastName: last_Name,
+                // dateOfBirth: date_Of_Birth,
+                email: user_email,
+                phoneNumber: phone_Number
+            }
+
         }).then(function (rooms) {
             console.log(rooms);
-            res.json(rooms);
+            res.render('roomBooked', rooms);
 
         })
             .catch(function (err) {
@@ -105,18 +99,15 @@ module.exports = function (app) {
             })
     });
 
-
-    // db.users.findAll({
-    //     include: [
-    //         {
-    //             model: db.posts,
-    //             include: [
-    //                 {
-    //                     model: db.comments
-    //                 }
-    //             ]
-    //         }
-    //     ]
+    // Albums.findAll({
+    //     include: [{
+    //         model: Artists,
+    //         as: 'Singer',
+    //         where: { name: 'Al Green' } //
+    //     }]
+    // })
+    //     .then(albums => console.log(albums))
+    //     .catch(console.error)
 
 
 
