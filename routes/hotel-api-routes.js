@@ -91,7 +91,7 @@ module.exports = function (app) {
 
         }).then(function (rooms) {
             console.log(rooms);
-            res.render('roomBooked', rooms);
+            res.render('roomBooked', { rooms });
 
         })
             .catch(function (err) {

@@ -68,9 +68,9 @@ $(function () {
             email: $('#email2')
                 .val()
                 .trim(),
-            dateOfbirth: $('#date_of_birth2')
-                .val()
-                .trim(),
+            // dateOfbirth: $('#date_of_birth2')
+            //     .val()
+            //     .trim(),
             phoneNumber: $('#tel-input2')
                 .val()
                 .trim()
@@ -83,7 +83,7 @@ $(function () {
             myHotel.firstName +
             '/lastName/' +
             myHotel.lastName + '/email/' +
-            myHotel.email + '/dateOfbirth/' + myHotel.dateOfbirth + '/phoneNumber/' + myHotel.phoneNumber;
+            myHotel.email + '/phoneNumber/' + myHotel.phoneNumber;
         window.location.href = URL;
 
     });
