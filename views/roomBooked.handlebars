@@ -1,5 +1,29 @@
-<div class="container">
+<div class="container" id="hotels">
 
+    <h1>Your Bookings</h1>
+
+
+    {{#each bookedRooms}}
+    <section class="rooms">
+        <h3>{{hotelName}}</h3>
+        <ul>
+            <li>Location: {{location}}</li>
+            <li>Check-in: {{checkIn}}</li>
+            <li>Check-out: {{checkOut}}</li>
+            <li>{{personsPerRoom}}</li>
+            <li>Room status: {{roomStatus}}</li>
+
+        </ul>
+
+        <a href="/sale" class="btn btn-light" role="button">Buy</a>
+
+
+    </section>
+
+
+    {{else}}
+    <p> You do not have any hotels currently booked</p>
+    {{/each}}
 
 
 </div>

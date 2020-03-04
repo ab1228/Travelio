@@ -46,7 +46,7 @@ module.exports = function (app) {
             })
 
     });
-
+    /// RENDER MYHOTEL PAGE
     app.get("/myHotel", function (req, res) {
         res.render('myhotel')
     });
@@ -54,6 +54,7 @@ module.exports = function (app) {
     app.get("/sale", function (req, res) {
         res.render("buy");
     });
+    //// RENDER CONTACT PAGE
     app.get("/contact", function (req, res) {
         res.render("contact")
     })
@@ -74,10 +75,11 @@ module.exports = function (app) {
 
     ///TO GET BOOKINGS
     app.get("/bookedRoom/firstName/:firstName/lastName/:lastName/email/:email/dateOfbirth/:dateOfbirth/phoneNumber/:phoneNumber", function (req, res) {
-        var email = req.params.email;
+
         var firstName = req.params.firstName;
         var lastName = req.params.lastName;
         var dateOfBirth = req.params.dateOfbirth;
+        var email = req.params.email;
         var phoneNumber = req.params.phoneNumber;
 
         db.bookedRoom.findAll({
@@ -87,13 +89,15 @@ module.exports = function (app) {
                 dateOfBirth: dateOfBirth,
                 email: email,
                 phoneNumber: phoneNumber
-
-
-
-            }
+            },
+            include: [
+                {
+                    model: db.Hotels
+                }
+            ]
         }).then(function (rooms) {
             console.log(rooms);
-            // res.render("allrooms", { hotels });
+            res.json(rooms);
 
         })
             .catch(function (err) {
