@@ -91,6 +91,25 @@ $(function () {
         window.location.href = URL;
 
     });
+    //// DELETE BOOKING
+
+    $(".btn-warning").on('submit', function (event) {
+
+        event.preventDefault();
+
+        var id = $(this).data("id");
+
+        // Send the DELETE request.
+        $.ajax("/api/deleteBookings/" + id, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("deleted booking", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    })
 
 
 
