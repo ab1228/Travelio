@@ -81,6 +81,18 @@ module.exports = function (app) {
         var phone_Number = req.params.phoneNumber;
         console.log(req.params);
         db.bookedRoom.findAll({
+            // where: {
+            // firstName: first_Name,
+            // lastName: last_Name,
+            // // dateOfBirth: date_Of_Birth,
+            // email: user_email,
+            // phoneNumber: phone_Number
+            // }
+            include:
+            {
+                model: db.Hotel
+
+            },
             where: {
                 firstName: first_Name,
                 lastName: last_Name,
@@ -88,6 +100,7 @@ module.exports = function (app) {
                 email: user_email,
                 phoneNumber: phone_Number
             }
+
 
         }).then(function (rooms) {
             console.log(rooms);
