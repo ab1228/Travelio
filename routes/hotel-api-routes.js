@@ -65,6 +65,8 @@ module.exports = function (app) {
 
     /// CREATES BOOKINGS
     app.post('/api/bookedRoom', function (req, res) {
+
+        console.log(req.body);
         db.bookedRoom.create(req.body).then(function (bookedRoom) {
             res.json(bookedRoom)
         }).catch(function (err) {

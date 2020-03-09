@@ -27,6 +27,26 @@ $(function () {
         window.location.href = URL;
     });
 
+    /// SENDS ID TO PURCHASE PAGE FROM ALLROOMS HBS
+    $("#hotel-form").on('submit', function (event) {
+
+        event.preventDefault();
+
+
+        var hotelRoom = {
+            roomId: $("#hotelRoomId").val()
+        };
+
+
+
+        console.log(hotelRoom);
+
+        var URL = '/sale/' + hotelRoom.roomId;
+        window.location.href = URL;
+        // console.log(URL);
+
+    });
+
     //// CREATE BOOKING FOR ROOM
     $('#book_room').on('submit', function () {
         event.preventDefault();
@@ -38,7 +58,7 @@ $(function () {
             dateOfBirth: $('#date_of_birth').val().trim(),
             phoneNumber: $('#tel-input').val().trim(),
             email: $('#email').val().trim(),
-            hotelID: $("#hotelID").val()
+            HotelId: $("#hotelID").val()
 
 
         };
@@ -113,24 +133,7 @@ $(function () {
         );
     });
 
-    $("#hotel-form").on('submit', function (event) {
 
-        event.preventDefault();
-
-
-        var hotelRoom = {
-            roomId: $("#hotelRoomId").val()
-        };
-
-
-
-        console.log(hotelRoom);
-
-        var URL = '/sale/' + hotelRoom.roomId;
-        window.location.href = URL;
-        // console.log(URL);
-
-    });
 
 
 
