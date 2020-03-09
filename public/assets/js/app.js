@@ -91,6 +91,8 @@ $(function () {
         window.location.href = URL;
 
     });
+
+
     //// DELETE BOOKING
 
     $(".btn-warning").on('submit', function (event) {
@@ -109,7 +111,26 @@ $(function () {
                 location.reload();
             }
         );
-    })
+    });
+
+    $("#hotel-form").on('submit', function (event) {
+
+        event.preventDefault();
+
+
+        var hotelRoom = {
+            roomId: $("#hotelRoomId").val()
+        };
+
+
+
+        console.log(hotelRoom);
+
+        var URL = '/sale/' + hotelRoom.roomId;
+        window.location.href = URL;
+        // console.log(URL);
+
+    });
 
 
 

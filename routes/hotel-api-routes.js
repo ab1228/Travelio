@@ -51,10 +51,10 @@ module.exports = function (app) {
         res.render('myhotel')
     });
     /// RENDER BUY.HBS
-    app.get("/sale/:id", function (req, res) {
-        console.log(req.params.id)
+    app.get("/sale/:roomId", function (req, res) {
+        console.log(req.params.roomId)
         res.render("buy",
-            { hotelId: req.params.id });
+            { hotelId: req.params.roomId });
     });
     //// RENDER CONTACT PAGE
     app.get("/contact", function (req, res) {

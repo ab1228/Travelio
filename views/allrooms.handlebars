@@ -4,23 +4,27 @@
 
 
     {{#each hotels}}
-    <section class="rooms">
-        <h3>{{hotelName}}</h3>
-        <ul>
+    <form id="hotel-form">
+        <section class="rooms">
+            <h3>{{hotelName}}</h3>
+            <ul>
 
-            <li>Location: {{location}}</li>
-            <li>Check-in: {{checkIn}}</li>
-            <li>Check-out: {{checkOut}}</li>
-            <li>{{personsPerRoom}}</li>
-            <li>Room status: {{roomStatus}}</li>
-            <span>Room ID: {{hotelName}}5567{{id}}</span>
+                <li>Location: {{location}}</li>
+                <li>Check-in: {{checkIn}}</li>
+                <li>Check-out: {{checkOut}}</li>
+                <li>{{personsPerRoom}}</li>
+                <li>Room status: {{roomStatus}}</li>
+                <span>Room ID: {{hotelName}}5567{{id}}</span>
+                <input type="hidden" id="hotelRoomId" value="{{id}}">
 
-        </ul>
+            </ul>
 
-        <a href="/sale/:id" class="btn btn-success" role="button" data-id="{{id}}">Buy</a>
+            <button type="submit" class="btn btn-success">Buy</button>
 
 
-    </section>
+
+        </section>
+    </form>
 
 
     {{else}}
