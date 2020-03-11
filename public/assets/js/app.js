@@ -111,17 +111,20 @@ $(function () {
             }
         );
 
+        function roomInfo() {
+            var URL =
+                '/bookedRoom/firstName/' +
+                newbookedRoom.firstName +
+                '/lastName/' +
+                newbookedRoom.lastName + '/email/' +
+                newbookedRoom.email + '/phoneNumber/' + newbookedRoom.phoneNumber;
 
 
-        // var URL =
-        //     '/bookedRoom/firstName/' +
-        //     newbookedRoom.firstName +
-        //     '/lastName/' +
-        //     newbookedRoom.lastName + '/email/' +
-        //     newbookedRoom.email + '/phoneNumber/' + newbookedRoom.phoneNumber;
+            window.location.href = URL;
+        }
+        setTimeout(function () { roomInfo(); }, 3000);
 
 
-        // window.location.href = URL;
 
 
     });
