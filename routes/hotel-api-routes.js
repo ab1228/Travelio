@@ -47,8 +47,11 @@ module.exports = function (app) {
 
     });
     /// RENDER MYHOTEL PAGE
+    // app.get("/myHotel", function (req, res) {
+    //     res.render('myhotel')
+    // });
     app.get("/myHotel", function (req, res) {
-        res.render('myhotel')
+        res.render('hotelLogIn')
     });
     /// RENDER BUY.HBS
     app.get("/sale/:roomId", function (req, res) {
