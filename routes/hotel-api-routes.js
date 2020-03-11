@@ -113,28 +113,18 @@ module.exports = function (app) {
 
     ///DELETE BOOKING
 
-    app.delete("/api/deleteBookings/:id", function (req, res) {
-        var hotelBooking = "id = " + req.params.id;
+    app.delete("/api/deleteBookings/:roomId", function (req, res) {
+
+        console.log(req.params.roomId)
         db.bookedRoom.destroy({
             where: {
-                refNumber: hotelBooking
+                refNumber: req.params.roomId
             }
         }).then(function (dbroom) {
             res.json(dbroom);
         })
 
     });
-    //     app.delete("/api/authors/:id", function (req, res) {
-    //         db.Author.destroy({
-    //             where: {
-    //                 id: req.params.id
-    //             }
-    //         }).then(function (dbAuthor) {
-    //             res.json(dbAuthor);
-    //         });
-    //     });
-
-    // };
 
 
 

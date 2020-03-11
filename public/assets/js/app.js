@@ -122,32 +122,35 @@ $(function () {
 
             window.location.href = URL;
         }
-        setTimeout(function () { roomInfo(); }, 3000);
+        setTimeout(function () { roomInfo(); }, 3500);
 
 
 
 
     });
 
-    //// DELETE BOOKING
+    // DELETE BOOKING
 
-    // $(".btn-warning").on('submit', function (event) {
+    $("#delete-booking").on('submit', function (event) {
 
-    //     event.preventDefault();
+        event.preventDefault();
+        var hotelRoom = {
+            roomId: $("#hotelRoomId").val()
+        };
 
-    //     var id = $(this).data("id");
+        console.log(hotelRoom);
 
-    //     // Send the DELETE request.
-    //     $.ajax("/api/deleteBookings/" + id, {
-    //         type: "DELETE"
-    //     }).then(
-    //         function () {
-    //             console.log("deleted booking", id);
-    //             // Reload the page to get the updated list
-    //             location.reload();
-    //         }
-    //     );
-    // });
+        // Send the DELETE request.
+        $.ajax("/api/deleteBookings/" + hotelRoom.roomId, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("deleted booking", roomId);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
 
 
 
@@ -160,4 +163,5 @@ $(function () {
 
 
 });
+
 

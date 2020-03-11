@@ -4,27 +4,30 @@
 
 
     {{#each rooms}}
-    <section class="rooms">
-        <h3>Hotel Reference Number: {{refNumber}}</h3>
-        <ul>
-            <li>First Name: {{firstName}}</li>
-            <li>lastName: {{lastName}}</li>
-            <li>Date of birth: {{dateOfBirth}}</li>
-            <li>Email: {{email}}</li>
-            <li>Hotel: {{Hotel.hotelName}}</li>
-            <li>Check In: {{Hotel.checkIn}}</li>
-            <li>Check Out: {{Hotel.checkOut}}</li>
-            <li>Location: {{Hotel.location}}</li>
+    <form id="delete-booking">
+        <section class="rooms">
+            <h3>Hotel Reference Number: {{refNumber}}</h3>
+            <ul>
+                <li>First Name: {{firstName}}</li>
+                <li>lastName: {{lastName}}</li>
+                <li>Date of birth: {{dateOfBirth}}</li>
+                <li>Email: {{email}}</li>
+                <li>Hotel: {{Hotel.hotelName}}</li>
+                <li>Check In: {{Hotel.checkIn}}</li>
+                <li>Check Out: {{Hotel.checkOut}}</li>
+                <li>Location: {{Hotel.location}}</li>
+                <input type="hidden" id="hotelRoomId" value="{{refNumber}}">
 
 
 
 
-        </ul>
+            </ul>
 
-        <a type="submit" class="btn btn-warning" data-id="{{this.id}}" role="button">Cancel Booking</a>
+            <button type="submit" class="btn btn-warning">Cancel Booking</button>
 
 
-    </section>
+        </section>
+    </form>
 
 
     {{else}}
