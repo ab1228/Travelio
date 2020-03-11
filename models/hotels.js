@@ -42,15 +42,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER
         }
     });
-    // Hotel.associate = function (models) {
-    //     // We're saying that a Post should belong to an Author
-    //     // A Post can't be created without an Author due to the foreign key constraint
-    //     Hotel.belongsTo(models.bookedRoom, {
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     });
-    // };
+
     return Hotel;
 };
 
