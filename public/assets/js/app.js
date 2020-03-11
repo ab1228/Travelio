@@ -47,36 +47,6 @@ $(function () {
 
     });
 
-    //// CREATE BOOKING FOR ROOM
-    $('#book_room').on('submit', function () {
-        event.preventDefault();
-
-        var newbookedRoom = {
-            refNumber: $("ref_Number").val(),
-            firstName: $('#firstName').val().trim(),
-            lastName: $('#lastName').val().trim(),
-            dateOfBirth: $('#date_of_birth').val().trim(),
-            phoneNumber: $('#tel-input').val().trim(),
-            email: $('#email').val().trim(),
-            HotelId: $("#hotelID").val()
-
-
-        };
-        console.log(newbookedRoom);
-
-
-        $.ajax('/api/bookedRoom', {
-            type: "POST",
-            data: newbookedRoom
-        }).then(
-            function () {
-                console.log("created new booked room");
-                // Reload the page to get the updated list
-                // location.reload();
-            }
-        );
-    });
-
     //// GET ROUTE FOR HOTEL BOOKING
     $('#my_Hotel').on('submit', function (event) {
         // Make sure to preventDefault on a submit event.
@@ -112,26 +82,72 @@ $(function () {
 
     });
 
+    //// CREATE BOOKING FOR ROOM
+    $('#book_room').on('submit', function () {
+        event.preventDefault();
+
+        var newbookedRoom = {
+            refNumber: $("ref_Number").val(),
+            firstName: $('#firstName').val().trim(),
+            lastName: $('#lastName').val().trim(),
+            dateOfBirth: $('#date_of_birth').val().trim(),
+            phoneNumber: $('#tel-input').val().trim(),
+            email: $('#email').val().trim(),
+            HotelId: $("#hotelID").val()
+
+
+        };
+        console.log(newbookedRoom);
+
+
+        $.ajax('/api/bookedRoom', {
+            type: "POST",
+            data: newbookedRoom
+        }).then(
+            function () {
+                console.log("created new booked room");
+                // Reload the page to get the updated list
+                // location.reload();
+            }
+        );
+
+
+
+        // var URL =
+        //     '/bookedRoom/firstName/' +
+        //     newbookedRoom.firstName +
+        //     '/lastName/' +
+        //     newbookedRoom.lastName + '/email/' +
+        //     newbookedRoom.email + '/phoneNumber/' + newbookedRoom.phoneNumber;
+
+
+        // window.location.href = URL;
+
+
+    });
 
     //// DELETE BOOKING
 
-    $(".btn-warning").on('submit', function (event) {
+    // $(".btn-warning").on('submit', function (event) {
 
-        event.preventDefault();
+    //     event.preventDefault();
 
-        var id = $(this).data("id");
+    //     var id = $(this).data("id");
 
-        // Send the DELETE request.
-        $.ajax("/api/deleteBookings/" + id, {
-            type: "DELETE"
-        }).then(
-            function () {
-                console.log("deleted booking", id);
-                // Reload the page to get the updated list
-                location.reload();
-            }
-        );
-    });
+    //     // Send the DELETE request.
+    //     $.ajax("/api/deleteBookings/" + id, {
+    //         type: "DELETE"
+    //     }).then(
+    //         function () {
+    //             console.log("deleted booking", id);
+    //             // Reload the page to get the updated list
+    //             location.reload();
+    //         }
+    //     );
+    // });
+
+
+
 
 
 

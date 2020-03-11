@@ -60,21 +60,6 @@ module.exports = function (app) {
     app.get("/contact", function (req, res) {
         res.render("contact")
     })
-
-
-
-    /// CREATES BOOKINGS
-    app.post('/api/bookedRoom', function (req, res) {
-
-        console.log(req.body);
-        db.bookedRoom.create(req.body).then(function (bookedRoom) {
-            res.json(bookedRoom)
-        }).catch(function (err) {
-            console.log(err);
-        })
-
-    })
-
     ///TO GET BOOKINGS
     app.get("/bookedRoom/firstName/:firstName/lastName/:lastName/email/:email/phoneNumber/:phoneNumber", function (req, res) {
 
@@ -110,34 +95,46 @@ module.exports = function (app) {
             })
     });
 
-    // Albums.findAll({
-    //     include: [{
-    //         model: Artists,
-    //         as: 'Singer',
-    //         where: { name: 'Al Green' } //
-    //     }]
-    // })
-    //     .then(albums => console.log(albums))
-    //     .catch(console.error)
-    //     include: [
-    //         {
-    //             model: Genre,
-    //             through: {
-    //                 where: {
-    //                     name: 'rock'
-    //                 },
-    //                 required: true,
-    //                 attributes: []
-    //             },
-    //   ]
+
+
+    /// CREATES BOOKINGS
+    app.post('/api/bookedRoom', function (req, res) {
+
+        console.log(req.body);
+        db.bookedRoom.create(req.body).then(function (bookedRoom) {
+            res.json(bookedRoom);
+        }).catch(function (err) {
+            console.log(err);
+        })
+
+    });
+
 
 
     ///DELETE BOOKING
 
     app.delete("/api/deleteBookings/:id", function (req, res) {
         var hotelBooking = "id = " + req.params.id;
+        db.bookedRoom.destroy({
+            where: {
+                refNumber: hotelBooking
+            }
+        }).then(function (dbroom) {
+            res.json(dbroom);
+        })
 
     });
+    //     app.delete("/api/authors/:id", function (req, res) {
+    //         db.Author.destroy({
+    //             where: {
+    //                 id: req.params.id
+    //             }
+    //         }).then(function (dbAuthor) {
+    //             res.json(dbAuthor);
+    //         });
+    //     });
+
+    // };
 
 
 
