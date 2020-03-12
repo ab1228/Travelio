@@ -59,10 +59,15 @@ a.nav-link {
 
 h1.text-center {
   color: white;
+  font-family: 'Monoton', cursive;
+  font-size: 60px;
 
 }
 
 .hotelCard li, .hotelCard2 li {
 border-right: solid 1px grey;
 align-items: center;
+}
+.navbar-brand img{
+  background-color: transparent;
 }
