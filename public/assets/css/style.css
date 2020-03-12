@@ -61,3 +61,8 @@ h1.text-center {
   color: white;
 
 }
+
+.hotelCard li, .hotelCard2 li {
+border-right: solid 1px grey;
+align-items: center;
+}

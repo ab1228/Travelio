@@ -7,14 +7,14 @@
     <form id="hotel-form">
         <section class="rooms">
             <h3>{{hotelName}}</h3>
-            <ul>
+            <ul class="hotelCard">
 
-                <li>Location: {{location}}</li>
-                <li>Check-in: {{checkIn}}</li>
-                <li>Check-out: {{checkOut}}</li>
+                <li><strong>Location: </strong>{{location}}</li>
+                <li><strong>Check In: </strong>{{checkIn}}</li>
+                <li><strong>Check Out:</strong> {{checkOut}}</li>
                 <li>{{personsPerRoom}}</li>
-                <li>Room status: {{roomStatus}}</li>
-                <span>Room ID: {{hotelName}}5567{{id}}</span>
+                <li><strong>Room status:</strong> {{roomStatus}}</li>
+                <span><strong>Room ID:</strong> {{hotelName}}5567{{id}}</span>
                 <input type="hidden" id="hotelRoomId" value="{{id}}">
 
             </ul>

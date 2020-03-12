@@ -7,15 +7,15 @@
     <form id="delete-booking">
         <section class="rooms">
             <h3>Hotel Reference Number: {{refNumber}}</h3>
-            <ul>
-                <li>First Name: {{firstName}}</li>
-                <li>lastName: {{lastName}}</li>
-                <li>Date of birth: {{dateOfBirth}}</li>
-                <li>Email: {{email}}</li>
-                <li>Hotel: {{Hotel.hotelName}}</li>
-                <li>Check In: {{Hotel.checkIn}}</li>
-                <li>Check Out: {{Hotel.checkOut}}</li>
-                <li>Location: {{Hotel.location}}</li>
+            <ul class="hotelCard2">
+                <li><strong>First Name: </strong>{{firstName}}</li>
+                <li><strong>last Name: </strong>{{lastName}}</li>
+                <li><strong>Date of birth: </strong> {{dateOfBirth}}</li>
+                <li><strong>Email: </strong> {{email}}</li>
+                <li><strong>Hotel: </strong>{{Hotel.hotelName}}</li>
+                <li><strong>Check In: </strong> {{Hotel.checkIn}}</li>
+                <li><strong>Check Out: </strong> {{Hotel.checkOut}}</li>
+                <li><strong>Location: </strong> {{Hotel.location}}</li>
                 <input type="hidden" id="hotelRoomId" value="{{refNumber}}">
 
 
