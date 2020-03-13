@@ -16,14 +16,19 @@
                 <li><strong>Check In: </strong> {{Hotel.checkIn}}</li>
                 <li><strong>Check Out: </strong> {{Hotel.checkOut}}</li>
                 <li><strong>Location: </strong> {{Hotel.location}}</li>
+
+
                 <input type="hidden" id="hotelRoomId" value="{{refNumber}}">
 
 
 
 
             </ul>
+            <span class="badge badge-pill badge-info"><strong>$ </strong> {{Hotel.roomPrice}}</span>
+            <button type="submit" class="badge badge-pill badge-warning">Cancel Booking</button>
 
-            <button type="submit" class="btn btn-warning">Cancel Booking</button>
+
+
 
 
         </section>
