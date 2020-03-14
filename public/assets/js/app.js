@@ -13,7 +13,11 @@ $(function () {
                 .trim()
 
         };
-        console.log(newSearch);
+
+        // if (newSearch.checkIn.value == '' || newSearch.checkOut.value == ''){
+
+        // }
+        // console.log(newSearch);
 
 
         var URL =

@@ -71,7 +71,7 @@ module.exports = function (app) {
         // var date_Of_Birth = req.params.dateOfbirth;
         var user_email = req.params.email;
         var phone_Number = req.params.phoneNumber;
-        console.log(req.params);
+        // console.log(req.params);
         db.bookedRoom.findAll({
             where: {
                 firstName: first_Name,
