@@ -28,7 +28,7 @@ var config = {
     user: DB_USER,
     // grab password from .env
     password: DB_PASS,
-    database: DB_DB
+    database: DB_NAME
 }
 var connection;
 
