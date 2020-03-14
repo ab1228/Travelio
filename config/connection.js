@@ -17,18 +17,20 @@
 
 // // Exports the connection for other files to use
 // module.exports = sequelize;
+
+//////////////////////////////////////////////
 require("dotenv").config();
 // require mysql
 var mysql = require('mysql');
 
 
 var config = {
-    host: DB_HOST,
+    host: process.env.DB_HOST,
     port: 3306,
-    user: DB_USER,
+    user: process.env.DB_USER,
     // grab password from .env
-    password: DB_PASS,
-    database: DB_NAME
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
 }
 var connection;
 
